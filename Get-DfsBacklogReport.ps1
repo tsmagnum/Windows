@@ -42,7 +42,8 @@ foreach ($folder in $replicatedFolders)
    $cmd = '& dfsrdiag.exe Backlog /SendingMember:{0} /ReceivingMember:{1} /RGName:"{2}" /RFName:"{3}" '`
    -f $sourceServer, $destinationServer, $folder.GroupName, $folder.FolderName 
 
-   Write-Output "Displaying Backlog for folder:" $folder.FolderName | Out-File -FilePath $logFile -Append
-   Invoke-Expression $cmd | Out-File -FilePath $logFile -Append
-
+   Write-Output "Displaying Backlog for folder:"$folder.FolderName | Out-File -FilePath $logFile -Append
+   Invoke-Expression $cmd | Select-Object -First 4 | Out-File -FilePath $logFile -Append
+   Add-Content -Path $logFile -Value "<-------------------------------------->"
+   Add-Content -Path $logFile -Value ""
 }
