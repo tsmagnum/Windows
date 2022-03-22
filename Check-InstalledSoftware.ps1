@@ -18,7 +18,6 @@ Link - https://github.com/tsmagnum/Windows/blob/master/Check-InstalledSoftware.p
 #>
 
 #region user-variables - please modify the values before running this script!
-$creds = Get-Credential
 #Set the logfile name and path before running the script
 $logFile = "C:\Scripts\SoftwareReport.csv"
 #Set the target computers in a text file, one per line.
@@ -26,6 +25,9 @@ $targets = Get-Content "C:\Scripts\myComputers.txt"
 #Set the name of the target software, please see the NOTES section above
 $software = "Microsoft .NET Framework 4.7.2*"
 #endregion
+
+#Getting the user credential to run the check
+$creds = Get-Credential
 
 #Creating the logfile
 Set-Content -Path $logFile -Value "Computer, InstallationStatus"
