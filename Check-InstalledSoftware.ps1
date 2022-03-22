@@ -77,3 +77,14 @@ foreach ($target in $targets)
         }
     
     }
+
+    
+    #Displaying Report Summary
+    $data = Import-Csv -path $logFile
+    $installedStatus = $data | where-object {$_.InstallationStatus -eq "Installed"}
+    $notInstalledStatus = $data | where-object {$_.InstallationStatus -ne "Installed"}
+    Write-Host "#### Report Summary ####"
+    Write-Host ""
+    Write-Host "Total computers checked: $($data.count)"
+    Write-Host "The desired software is installed on $($installedStatus.count) computers" -ForegroundColor Green
+    Write-Host "The desired software is not installed on $($notInstalledStatus.count) computers" -ForegroundColor Red
