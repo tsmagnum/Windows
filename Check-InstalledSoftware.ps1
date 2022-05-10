@@ -2,7 +2,7 @@
 #Set the logfile name and path before running the script
 $logFile = "C:\temp\SoftwareReport.csv"
 #Set the target computers in a textfile 
-$targets = Get-Content "C:\Targets\ClientSede.txt"
+$targets = Get-Content "C:\Targets\Clients.txt"
 #Set the name of the target software
 $software = "*Password Solution*"
 #$software2 = "Microsoft .NET Framework 4.8*"
