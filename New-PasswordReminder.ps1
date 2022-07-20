@@ -21,7 +21,7 @@ $mailmessage.Body is the email message body. You can modify it as per your requi
 You need to run the script with a user authorized to read the users properties in Active Directory.
 
 Author: Federico Lillacci - Coesione Srl - https://github.com/tsmagnum
-Link - https://github.com/tsmagnum/Windows/blob/main/New-PasswordReminder.ps1
+Link - https://github.com/tsmagnum/Windows/blob/master/New-PasswordReminder.ps1
 #>
 
 #TLS Settings required for Office 365 SMTP server
