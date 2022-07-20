@@ -37,7 +37,7 @@ $smtpPort = 587 #the SMTP server port
 $smtpSSL = $true #do we want a SSL connection to our SMTP server?
 $emailFrom = "yourSender@yourdomain.com" #the mailbox you want to use to send the password expiration reminders
 $adminEmail = "" #optional, a CC: address to send the the password expiration reminders; otherwise leave blank ""
-$max_alert = 30 #how many days before password expiry do we start sending reminder emails?
+$max_alert = 14 #how many days before password expiry do we start sending reminder emails?
 #endregion
 
 #region Functions
